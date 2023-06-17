@@ -1,0 +1,10 @@
+---
+title:
+- type: main
+  text: Business Intuition for Consulting Interviews
+- type: subtitle
+  text: Understand how to think through business cases to ace consulting interviews and advance your career. 
+
+stylesheet: epub.css
+cover-image: cover.jpg
+...
