@@ -28,6 +28,24 @@ Break into consulting, learn how to solve common business problems, and advise y
 **For the price of a cup of coffee, you can take the first step**
 """
 
+GOOGLE_HEADER_TAG = """
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MQLS5QJ');</script>
+    <!-- End Google Tag Manager -->
+</head>
+"""
+
+GOOGLE_BODY_TAG = """
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MQLS5QJ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+"""
 
 def load_css_file(css_file_path):
     with open(css_file_path) as f:
@@ -43,6 +61,9 @@ st.set_page_config(
 )
 load_css_file(CSS_FILE)
 
+# --- GOOGLE TAG HEADER ---
+st.markdown(GOOGLE_HEADER_TAG, unsafe_allow_html=True)
+st.markdown(GOOGLE_BODY_TAG, unsafe_allow_html=True)
 
 # --- MAIN SECTION ---
 st.header(PRODUCT_NAME)
